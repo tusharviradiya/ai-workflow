@@ -18,7 +18,7 @@ from backend.agents.account_research.tools import (
 
 from langchain_mistralai.chat_models import ChatMistralAI
 
-llm = ChatMistralAI(model="mistral-large-latest", temperature=0)
+llm = ChatMistralAI(model="mistral-large-latest", temperature=0, timeout=120, max_retries=2)
 
 def intent_router_node(state: AccountResearchState):
     """Parses user query to extract the company name."""
